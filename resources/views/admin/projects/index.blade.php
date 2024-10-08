@@ -13,25 +13,36 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nome</th>
-                            <th>Slug</th>
-                            <th>Strumenti</th>
+                            <th>Descrizione</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($project as $project)
                             <tr>
-                                <td>{{ $project->id }}</td>
                                 <td>{{ $project->name }}</td>
-                                <td>{{ $project->slug }}</td>
-                                <td>
+                                <td>{{ $project->summary }}</td>
                                     <div class="d-flex">
-                                        <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}" class="btn btn-sm btn-primary">
+                                    <td>
+                                        <a href="{{ route('admin.projects.show', $project->id) }}"
+                                             class="btn btn-sm btn-info" title="Visualizza">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                    </div>
-                                </td>
+                                        <a href="{{ route('admin.projects.edit', $project->id) }}"
+                                                class="btn btn-sm btn-primary" title="Modifica">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST"
+                                                class="d-inline"
+                                                onsubmit="return confirm('Sei sicuro di voler eliminare questo progetto?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger" title="Elimina">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </div>
                             </tr>
                         @endforeach
                     </tbody>

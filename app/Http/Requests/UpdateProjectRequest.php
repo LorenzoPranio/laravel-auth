@@ -25,7 +25,7 @@ class UpdateProjectRequest extends  FormRequest
     {
         return [
             'name' => 'required|max:200',
-            'description' => 'nullable|string'
+            'summary' => 'nullable|string'
         ];
     }
 
