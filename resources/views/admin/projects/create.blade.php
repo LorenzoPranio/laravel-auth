@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-12">
                             <label for="" class="control-label my-2">Immagine del progetto</label>
-                            <input type="file" class="form-control form-control-sm" name="image" id="Immagine del progetto">
+                            <input type="file" class="form-control form-control-sm" name="project_image" id="project_image">
                         </div>
                         <div class="col-12">
                             <label for="" class="control-label my-2">Sommario progetto</label>

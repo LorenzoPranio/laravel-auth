@@ -6,6 +6,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use  App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -43,6 +44,11 @@ class ProjectController extends Controller
         $project = new Project();
 
         $form_data['slug'] = Project::generateSlug($form_data['name'], '-');
+
+        if ($request->hasFile('project_image')) {
+            $path = Storage::disk('public')->put('project_image', $form_data['project_image']);
+            $form_data['project_image'] = $path;
+        }
 
         $project->fill($form_data);
 
@@ -83,6 +89,7 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $form_data = $request->validated();
+        
         $form_data['slug'] = Project::generateSlug($form_data['name'], '-');
 
         $project->fill($form_data);
