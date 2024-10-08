@@ -33,8 +33,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'name.required' => 'Il nome del progetto è obbligatorio',
             'name.max' => 'Il nome del progetto deve essere lungo al massimo :max caratteri',
-            'slug.required' => 'Il slug del progetto è obbligatorio',
-            'slug.max' => 'Il slug del progetto deve essere lungo al massimo :max caratteri'
+            'slug.required' => 'Lo slug del progetto è obbligatorio',
+            'slug.max' => 'Lo slug del progetto deve essere lungo al massimo :max caratteri'
         ];
     }
 }
