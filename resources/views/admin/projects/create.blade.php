@@ -11,19 +11,19 @@
                     @csrf
                     <div class="row">
                         <div class="col-12">
-                            <label for="" class="control-label">Nome progetto</label>
+                            <label for="" class="control-label my-2">Nome progetto</label>
                             <input type="text" id="" class="form-control form-control-sm" name="name" placeholder="Nome progetto">
                         </div>
                         <div class="col-12">
-                            <label for="" class="control-label">Immagine del progetto</label>
-                            <input type="file" name="" id="">
+                            <label for="" class="control-label my-2">Immagine del progetto</label>
+                            <input type="file" class="form-control form-control-sm" name="image" id="Immagine del progetto">
                         </div>
                         <div class="col-12">
-                            <label for="" class="control-label">Sommario progetto</label>
+                            <label for="" class="control-label my-2">Sommario progetto</label>
                             <textarea name="summary" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-sm btn-success">Salva</button>
+                            <button type="submit" class="btn btn-sm btn-success my-2">Salva</button>
                         </div>
                     </div>
                 </form>
